@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<defs>
+  <radialGradient id="petal" cx="51%" cy="72%" r="83%">
+    <stop offset="0" stop-color="#aa151e" stop-opacity=".86"/>
+    <stop offset=".55" stop-color="#811018" stop-opacity=".82"/>
+    <stop offset="1" stop-color="#31070c" stop-opacity=".66"/>
+  </radialGradient>
+  <radialGradient id="core"><stop stop-color="#ae1922" stop-opacity=".57"/><stop offset="1" stop-color="#6a0b12" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<!-- Six evenly spaced rounded petals, one flower. All contours fit within viewBox. -->
+<g transform="translate(500 500)" filter="url(#soft)">
+  <path transform="rotate(0)" fill="url(#petal)" d="M 0 42 C -64 -24 -163 -184 -117 -291 C -79 -379 79 -379 117 -291 C 163 -184 64 -24 0 42 Z"/>
+  <path transform="rotate(60)" fill="url(#petal)" d="M 0 42 C -64 -24 -163 -184 -117 -291 C -79 -379 79 -379 117 -291 C 163 -184 64 -24 0 42 Z"/>
+  <path transform="rotate(120)" fill="url(#petal)" d="M 0 42 C -64 -24 -163 -184 -117 -291 C -79 -379 79 -379 117 -291 C 163 -184 64 -24 0 42 Z"/>
+  <path transform="rotate(180)" fill="url(#petal)" d="M 0 42 C -64 -24 -163 -184 -117 -291 C -79 -379 79 -379 117 -291 C 163 -184 64 -24 0 42 Z"/>
+  <path transform="rotate(240)" fill="url(#petal)" d="M 0 42 C -64 -24 -163 -184 -117 -291 C -79 -379 79 -379 117 -291 C 163 -184 64 -24 0 42 Z"/>
+  <path transform="rotate(300)" fill="url(#petal)" d="M 0 42 C -64 -24 -163 -184 -117 -291 C -79 -379 79 -379 117 -291 C 163 -184 64 -24 0 42 Z"/>
+  <circle r="95" fill="url(#core)"/>
+</g>
+</svg>
