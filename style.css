@@ -12,8 +12,70 @@ main::after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;
 .hero-inner{width:min(100%,1320px);min-height:100svh;margin:auto;padding:clamp(38px,7vh,85px) clamp(30px,7vw,115px) clamp(60px,8vh,100px);display:flex;flex-direction:column}
 .masthead{flex:0 0 auto}.seal{display:block;width:clamp(52px,5.2vw,76px);height:auto;mix-blend-mode:screen}
 .identity{margin-top:auto;margin-bottom:auto;padding-top:clamp(55px,9vh,110px);width:max-content;max-width:100%}.identity h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(61px,7vw,108px);line-height:.94;letter-spacing:-.018em;font-weight:600;margin:0 0 clamp(100px,13vh,145px)}
-.identity nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.identity nav a{text-decoration:none;font-size:clamp(16px,1.7vw,23px);line-height:1.1;transition:color .2s}.identity nav a:first-child{color:var(--accent)}.identity nav a span{color:var(--accent);padding-left:.48em}.identity nav a:hover,.identity nav a:focus-visible{color:#ff7377}.socials{display:flex;gap:19px;margin-top:30px}.socials a{display:inline-flex;color:var(--accent);width:25px;height:25px}.socials svg{width:100%;height:100%;fill:currentColor}.socials a:hover{color:#ff7377}
+.identity nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.identity nav a{text-decoration:none;font-size:clamp(16px,1.7vw,23px);line-height:1.1;transition:color .2s}.identity nav a:first-child{color:var(--accent)}.identity nav a span{color:var(--accent);padding-left:.48em}.identity nav a:hover,.identity nav a:focus-visible{color:#f4f0ed}.socials{display:flex;gap:19px;margin-top:30px}.socials a{display:inline-flex;color:var(--accent);width:25px;height:25px}.socials svg{width:100%;height:100%;fill:currentColor}.socials a:hover{color:#f4f0ed}
 .colophon{background:transparent;min-height:65svh;display:flex;align-items:flex-end}.colophon-inner{width:min(100%,1320px);margin:0 auto;padding:60px clamp(30px,7vw,115px) clamp(42px,8vh,85px);display:flex;justify-content:space-between;align-items:flex-end;gap:40px}.dachshund{display:block;width:clamp(135px,15vw,205px);height:auto}.legal{color:#c65c5c;font-size:10px;line-height:1.5;max-width:345px;text-align:right;margin:0 0 7px}
 @media(max-width:700px){.hero-inner{padding:clamp(34px,7vh,62px) 30px 48px;min-height:100svh}.seal{width:51px}.identity{padding-top:65px}.identity h1{font-size:clamp(59px,14vw,83px);line-height:.98;letter-spacing:-.018em;margin-bottom:95px}.identity nav{gap:10px}.identity nav a{font-size:clamp(17px,4.8vw,21px)}.socials{margin-top:30px}.flower--right{left:77%;top:82svh;width:max(220vw,132svh);opacity:.76;transform:translate(-50%,-50%) rotate(-9deg)}.flower--left{left:-18%;top:7svh;width:max(115vw,60svh);opacity:.30;transform:translate(-50%,-50%) rotate(14deg)}main::after{background:linear-gradient(90deg,rgba(8,7,7,.85) 0%,rgba(8,7,7,.56) 42%,rgba(8,7,7,.10) 100%)}.colophon{min-height:55svh}.colophon-inner{padding:60px 30px 40px;flex-direction:column;align-items:flex-start;gap:28px}.dachshund{width:165px}.legal{text-align:left;font-size:10px;max-width:310px}}
 @media(max-height:620px) and (min-width:701px){.hero-inner{padding-top:30px;padding-bottom:35px}.identity{padding-top:35px}.identity h1{font-size:clamp(50px,5vw,75px);margin-bottom:75px}.socials{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* V25: single-screen landing page; mobile / short viewports remain accessible. */
+html,body{min-height:100%;}
+@media (min-width:701px) and (min-height:650px){
+  html,body{height:100%;overflow:hidden}
+  main{height:100svh;display:flex;flex-direction:column}
+  .hero{min-height:0;flex:1 1 auto}
+  .hero-inner{min-height:0;height:100%;padding-top:clamp(20px,3.5vh,46px);padding-bottom:0}
+  .identity{padding-top:clamp(10px,2vh,24px)}
+  .identity h1{margin-bottom:clamp(24px,4.2vh,49px)}
+  .colophon{min-height:0;flex:0 0 auto}
+  .colophon-inner{padding-top:0;padding-bottom:clamp(17px,3vh,35px)}
+  .dachshund{width:clamp(108px,11vw,155px)}
+  .flower--right{top:65svh}
+}
+.identity h1{line-height:.76}
+.identity nav a{font-weight:400;text-decoration:none;transition:color .2s,font-weight .2s}
+.identity nav a:hover,.identity nav a:focus-visible{color:#fff;font-weight:700;text-decoration:none}
+.identity nav a:first-child:hover,.identity nav a:first-child:focus-visible{color:#f4f0ed}
+.socials a{transition:color .2s,transform .2s}.socials a:hover,.socials a:focus-visible{transform:translateY(-2px)}
+.legal{color:#aaa3a0}
+@media(max-width:700px){.identity h1{line-height:.79}}
+@media(max-height:650px) and (min-width:701px){.identity h1{line-height:.8}}
+
+/* V28: tighter two-line name and restrained hover palette. */
+.identity h1{line-height:.64}
+@media(max-width:700px){.identity h1{line-height:.68}}
+@media(max-height:650px) and (min-width:701px){.identity h1{line-height:.68}}
+/* No underlines on any site link, including browser defaults. */
+a,a:link,a:visited,a:hover,a:focus-visible,a:active{text-decoration:none}
+.identity nav a:first-child:hover,.identity nav a:first-child:focus-visible{color:#f4f0ed}
+.identity nav a:hover,.identity nav a:focus-visible{color:#f4f0ed}
+.socials a:hover,.socials a:focus-visible{color:#f4f0ed}
+
+/* Books links: controlled by stylesheet, not inline colours. */
+.books-page .books-back{color:#df3539}
+.books-page .books-artsreda{color:#eeeae5}
+.books-page a:hover,.books-page a:focus-visible{color:#fff;font-weight:700}
+
+/* V29: Albums page — no underlines in any state; cool, neutral hover. */
+.books-page a, .books-page a:link, .books-page a:visited,
+.books-page a:hover, .books-page a:focus-visible, .books-page a:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+.books-page .books-back, .books-page .books-back:visited { color: #df3539; }
+.books-page .books-artsreda, .books-page .books-artsreda:visited { color: #eeeae5; }
+.books-page a:hover, .books-page a:focus-visible {
+  color: #8fbbe0 !important;
+  font-weight: 600;
+}
+
+/* V30: restore breathing room between the two name lines; neutral album hover. */
+.identity h1{line-height:.73}
+@media(max-width:700px){.identity h1{line-height:.77}}
+@media(max-height:650px) and (min-width:701px){.identity h1{line-height:.77}}
+.books-page a:hover,.books-page a:focus-visible{color:#f4f0ed !important;font-weight:400}
+
+/* V31: Albums — red hover without underlines or changes in weight. */
+.books-page .books-artsreda:hover,.books-page .books-artsreda:focus-visible{color:#df3539 !important;font-weight:400}
