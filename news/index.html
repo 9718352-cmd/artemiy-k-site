@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080707">
+<title>Fütter mein Ego!</title>
+<link rel="icon" href="../favicon.ico?v=34" sizes="any">
+<link rel="icon" type="image/png" href="../favicon.png?v=34">
+<meta property="og:title" content="Fütter mein Ego!">
+<link rel="stylesheet" href="../style.css?v=38">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=112881029','ym');
+ym(112881029,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MB0QJTR7G0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MB0QJTR7G0');</script>
+</head>
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/112881029" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<main class="news-page">
+  <div class="news-wrap">
+    <a class="news-back" href="../index.html">← НА ГЛАВНУЮ</a>
+    <h1>NEWS</h1>
+    <div id="news-list" class="news-list" aria-live="polite"></div>
+  </div>
+</main>
+<script>
+fetch('./news.json',{cache:'no-store'})
+  .then(r=>{if(!r.ok)throw new Error('news.json');return r.json()})
+  .then(items=>{
+    const list=document.getElementById('news-list');
+    if(!items.length){list.innerHTML='<p class="news-empty">Здесь будут появляться новые съёмки, альбомы и обновления сайта.</p>';return;}
+    items.forEach(item=>{
+      const article=document.createElement('article'); article.className='news-item';
+      const date=document.createElement('time'); date.className='news-date'; date.textContent=item.date;
+      article.appendChild(date);
+      const text=document.createElement(item.url?'a':'div'); text.className='news-text';
+      const lead=document.createElement('span'); lead.className='news-lead'; lead.textContent=item.lead || item.text; text.appendChild(lead);
+      if(item.title){const title=document.createElement('span');title.className='news-title';title.textContent=item.title;text.appendChild(title);}
+      if(item.url){text.href=item.url; if(/^https?:/.test(item.url)){text.target='_blank';text.rel='noopener noreferrer';} const arrow=document.createElement('span');arrow.className='news-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent=' ↗';text.appendChild(arrow);}
+      article.appendChild(text); list.appendChild(article);
+    });
+  })
+  .catch(()=>{
+    // Local preview (file://) blocks fetch() in some browsers. Show the current
+    // entries here as a fallback; on the published site news.json remains the source.
+    const items=[
+      {date:'07.10.2026',lead:'Напечатан альбом',title:'«11 концертов этим летом»'},
+      {date:'06.10.2026',lead:'Новая карусель в Instagram',title:'Концерт 30.09.2026',url:'https://www.instagram.com/p/DeJHPB_DRJb/?stkn=dmFzamtncng5Ym5j'},
+      {date:'27.09.2026',lead:'Новая карусель в Instagram',title:'Концерт 23.09.2026',url:'https://www.instagram.com/p/DdylTsyDSFI/?stkn=cTl2dWhldmRzM3R4'}
+    ];
+    const list=document.getElementById('news-list');
+    items.forEach(item=>{
+      const article=document.createElement('article'); article.className='news-item';
+      const date=document.createElement('time'); date.className='news-date'; date.textContent=item.date; article.appendChild(date);
+      const el=document.createElement(item.url?'a':'div'); el.className='news-text';
+      const lead=document.createElement('span');lead.className='news-lead';lead.textContent=item.lead || item.text;el.appendChild(lead);
+      if(item.title){const title=document.createElement('span');title.className='news-title';title.textContent=item.title;el.appendChild(title);}
+      if(item.url){el.href=item.url;el.target='_blank';el.rel='noopener noreferrer';const arrow=document.createElement('span');arrow.className='news-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent=' ↗';el.appendChild(arrow);}
+      article.appendChild(el);list.appendChild(article);
+    });
+  });
+</script>
+</body>
+</html>
