@@ -124,21 +124,3 @@ a.news-text:hover,a.news-text:focus-visible{color:#df3539}
 /* V36: real NEWS entries; slightly quieter reading size. */
 .news-text{font-size:clamp(17px,1.75vw,23px)}
 @media(max-width:700px){.news-text{font-size:18px}}
-
-
-/* V38: NEWS as a quiet chronological journal rather than a notice board. */
-.news-list{max-width:720px}
-.news-item{padding:0;margin:0 0 clamp(58px,7vh,86px);border-bottom:0}
-.news-date{font-size:11px;letter-spacing:.045em;color:#827d7a;margin-bottom:14px}
-.news-text{display:inline-block;font-family:'Cormorant Garamond',Georgia,serif;color:#e8e3df;font-size:clamp(18px,1.8vw,24px);line-height:1.18;font-weight:400}
-.news-lead{display:block;color:#bcb6b2;font-size:.78em;line-height:1.35;margin-bottom:4px}
-.news-title{display:inline;color:#eeeae5;font-size:1.12em;font-weight:600}
-.news-arrow{display:inline;color:#df3539;font-size:.78em;margin-left:.28em;vertical-align:.08em}
-a.news-text:hover .news-title,a.news-text:focus-visible .news-title{color:#df3539}
-a.news-text:hover .news-lead,a.news-text:focus-visible .news-lead{color:#bcb6b2}
-@media(max-width:700px){
-  .news-page h1{margin-bottom:72px}
-  .news-item{margin-bottom:54px}
-  .news-date{margin-bottom:11px}
-  .news-text{font-size:19px}
-}

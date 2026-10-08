@@ -1,19 +1,16 @@
 [
   {
     "date": "07.10.2026",
-    "lead": "Напечатан альбом",
-    "title": "«11 концертов этим летом»"
+    "text": "Напечатан альбом «11 концертов этим летом»."
   },
   {
     "date": "06.10.2026",
-    "lead": "Новая карусель в Instagram",
-    "title": "Концерт 30.09.2026",
+    "text": "Новая карусель в Instagram — концерт 30.09.2026.",
     "url": "https://www.instagram.com/p/DeJHPB_DRJb/?stkn=dmFzamtncng5Ym5j"
   },
   {
     "date": "27.09.2026",
-    "lead": "Новая карусель в Instagram",
-    "title": "Концерт 23.09.2026",
+    "text": "Новая карусель в Instagram — концерт 23.09.2026.",
     "url": "https://www.instagram.com/p/DdylTsyDSFI/?stkn=cTl2dWhldmRzM3R4"
   }
 ]
